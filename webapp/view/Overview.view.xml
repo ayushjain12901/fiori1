@@ -1,0 +1,34 @@
+<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:html="http://www.w3.org/1999/xhtml" controllerName="demoapp.controller.Overview">
+	<Page id="_IDGenPage51" title="{i18n>overviewPage}" showNavButton="true" navButtonPress=".onNavBack">
+		<content>
+			<sap.ui.layout:Grid xmlns:sap.ui.layout="sap.ui.layout" id="grid0" defaultIndent="XL1 L1 M1 S1" defaultSpan="XL1 L1 M6 S12">
+				<sap.ui.layout:content>
+					<GenericTile xmlns:action="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1" id="tile0" header="{i18n>tileHeader1}" subheader="{i18n>tileSub1}" press="action" action:wiring="\{'press':\{'navigation':\{'routeName':'SalesOrders'\}\}\}">
+						<tileContent>
+							<TileContent id="content0">
+								<NumericContent id="num1" icon="sap-icon://sales-order" value="503"/>
+							</TileContent>
+						</tileContent>
+					</GenericTile>
+					<GenericTile xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:sap.ui.layout="sap.ui.layout" xmlns="sap.m" xmlns:action="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1" id="tile0_copy" subheader="{i18n>tileSub1}" header="{i18n>tileHeader2}" press="action" action:wiring="\{'press':\{'navigation':\{'routeName':'Product'\}\}\}">
+						<tileContent>
+							<TileContent id="content0_copy">
+								<NumericContent id="_IDGenNumericContent51" icon="sap-icon://product" value="126"/>
+							</TileContent>
+						</tileContent>
+					</GenericTile>
+					<GenericTile xmlns:action="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1" id="tile0_copy2" subheader="{i18n>tileSub2}" header="{i18n>tileHeader3}" press="action" action:wiring="\{'press':\{'navigation':\{'routeName':'LocalProduct'\}\}\}">
+						<tileContent>
+							<TileContent id="content0_copy2">
+								<NumericContent id="_IDGenNumericContent52" icon="sap-icon://product" value="5"/>
+							</TileContent>
+						</tileContent>
+					</GenericTile>
+					<GenericTile xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:sap.ui.layout="sap.ui.layout" xmlns="sap.m" xmlns:action="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1" id="tile0_copy3" subheader="OData Model" header="Sales Orders - ALV Report" press="action" action:wiring="\{'press':\{'navigation':\{'routeName':'SalesOrderALV'\}\}\}">
+					    
+					</GenericTile>
+				</sap.ui.layout:content>
+			</sap.ui.layout:Grid>
+		</content>
+	</Page>
+</mvc:View>

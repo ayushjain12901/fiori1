@@ -1,0 +1,211 @@
+{
+  "_version": "1.32.0",
+  "sap.app": {
+    "id": "demoapp",
+    "type": "application",
+    "i18n": "i18n/i18n.properties",
+    "applicationVersion": {
+      "version": "0.0.1"
+    },
+    "title": "{{appTitle}}",
+    "description": "{{appDescription}}",
+    "dataSources": {
+      "mainService": {
+        "uri": "/sap/opu/odata/",
+        "type": "OData",
+        "settings": {
+          "annotations": [],
+          "localUri": "localService/metadata.xml",
+          "odataVersion": "4.0"
+        }
+      },
+      "GWSAMPLE_BASIC": {
+          "uri": "/sap/opu/odata/iwbep/GWSAMPLE_BASIC/",
+          "type": "OData",
+          "settings": {
+              "odataVersion": "2.0",
+              "annotations": [],
+              "localUri": "localService/GWSAMPLE_BASIC/metadata.xml"
+          }
+      }
+    }
+  },
+  "sap.ui": {
+    "technology": "UI5",
+    "icons": {
+      "icon": "",
+      "favIcon": "",
+      "phone": "",
+      "phone@2": "",
+      "tablet": "",
+      "tablet@2": ""
+    },
+    "deviceTypes": {
+      "desktop": true,
+      "tablet": true,
+      "phone": true
+    }
+  },
+  "sap.ui5": {
+    "flexEnabled": true,
+    "dependencies": {
+      "minUI5Version": "1.97.0",
+      "libs": {
+        "sap.ui.core": {}
+      }
+    },
+    "contentDensities": {
+      "compact": true,
+      "cozy": true
+    },
+    "models": {
+      "i18n": {
+        "type": "sap.ui.model.resource.ResourceModel",
+        "settings": {
+          "bundleName": "demoapp.i18n.i18n"
+        }
+      },
+      "rootModel": {
+        "type": "sap.ui.model.odata.v2.ODataModel",
+        "dataSource": "GWSAMPLE_BASIC",
+        "preload": true,
+        "settings": {
+          "defaultOperationMode": "Server",
+          "defaultBindingMode": "OneWay",
+          "defaultCountMode": "Request"
+        }
+      },
+      "invoiceModel":{
+          "type": "sap.ui.model.json.JSONModel",
+          "uri": "Invoices.json"
+      },
+      "productModel":{
+        "type": "sap.ui.model.json.JSONModel",
+        "uri": "Products.json"
+      }
+    },
+    "resources": {
+      "css": [
+        {
+          "uri": "css/style.css"
+        }
+      ]
+    },
+    "routing": {
+      "config": {
+        "routerClass": "sap.m.routing.Router",
+        "viewType": "XML",
+        "async": true,
+        "viewPath": "demoapp.view",
+        "controlAggregation": "pages",
+        "controlId": "app",
+        "clearControlAggregation": false,
+        "bypassed": {
+            "target":["NotFound"]
+        }
+      },
+      "routes": [
+        {
+          "name": "initial",
+          "pattern": "",
+          "target": ["Login"]
+        },
+        {
+            "name": "Overview",
+            "pattern": "Overview",
+            "target": ["Overview"]
+        },
+        {
+            "name": "Product",
+            "pattern": "Product",
+            "target": ["Product"]
+        },
+        {
+            "name": "SalesOrders",
+            "pattern": "SalesOrders",
+            "target": ["SalesOrders"]
+        },
+        {
+            "name": "detail",
+            "pattern": "salesOrder/{sId}",
+            "titleTarget": "",
+            "target": ["SalesOrderLineItem"]
+        },
+        {
+            "name": "LocalProduct",
+            "pattern": "LocalProduct",
+            "target": ["LocalProduct"]
+        },
+        {
+            "name": "SalesOrderALV",
+            "pattern": "SalesOrderALV",
+            "target": ["SalesOrderALV"]
+        }
+      ],
+      "targets": {
+            "Login": {
+                "viewType": "XML",
+                "transition": "slide",
+                "clearControlAggregation": false,
+                "viewId": "Login",
+                "viewName": "Login"
+            },
+            "Overview": {
+                "viewType": "XML",
+                "transition": "slide",
+                "clearControlAggregation": false,
+                "viewId": "Overview",
+                "viewName": "Overview"
+            },
+            "Product": {
+                "viewType": "XML",
+                "transition": "slide",
+                "clearControlAggregation": false,
+                "viewId": "Product",
+                "viewName": "Product"
+            },
+            "SalesOrders": {
+                "viewType": "XML",
+                "transition": "slide",
+                "clearControlAggregation": false,
+                "viewId": "SalesOrders",
+                "viewName": "SalesOrders"
+            },
+            "SalesOrderLineItem": {
+                "viewType": "XML",
+                "transition": "slide",
+                "clearControlAggregation": false,
+                "viewId": "SalesOrderLineItem",
+                "viewName": "SalesOrderLineItem"
+            },
+            "LocalProduct": {
+                "viewType": "XML",
+                "transition": "slide",
+                "clearControlAggregation": false,
+                "viewId": "LocalProduct",
+                "viewName": "LocalProduct"
+            },
+            "NotFound": {
+                "viewType": "XML",
+                "transition": "slide",
+                "clearControlAggregation": false,
+                "viewId": "NotFound",
+                "viewName": "NotFound"
+            },
+            "SalesOrderALV": {
+                "viewType": "XML",
+                "transition": "slide",
+                "clearControlAggregation": false,
+                "viewId": "SalesOrderALV",
+                "viewName": "SalesOrderALV"
+            }
+        }
+    },
+    "rootView": {
+      "viewName": "demoapp.view.App",
+      "type": "XML",
+      "async": true,
+      "id": "App"
+    }
+  }
+}

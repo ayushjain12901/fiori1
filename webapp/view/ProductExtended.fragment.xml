@@ -1,0 +1,4 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core">
+	<ObjectListItem id="productExtended" title="{productModel>ProductName} ({productModel>QuantityPerUnit})" number="{productModel>UnitPrice}"
+		type="Active" numberUnit="USD" press=".onItemSelected"></ObjectListItem>
+</core:FragmentDefinition>

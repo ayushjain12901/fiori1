@@ -1,0 +1,10 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core">
+	<ViewSettingsDialog id="_IDGenViewSettingsDialog121" confirm="handleSortDialogConfirm">
+		<sortItems>
+			<ViewSettingsItem id="_IDGenViewSettingsItem121" text="Customer Name" key="CustomerName" selected="true"/>
+			<ViewSettingsItem id="_IDGenViewSettingsItem122" text="Sales Order ID" key="SalesOrderID"/>
+			<ViewSettingsItem id="_IDGenViewSettingsItem123" text="Gross Amount" key="GrossAmount"/>
+			<ViewSettingsItem id="_IDGenViewSettingsItem124" text="Lifecycle Status" key="LifecycleStatus"/>
+		</sortItems>
+	</ViewSettingsDialog>
+</core:FragmentDefinition>

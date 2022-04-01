@@ -1,0 +1,8 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core">
+	<ViewSettingsDialog id="_IDGenViewSettingsDialog21" confirm="handleGroupDialogConfirm">
+		<groupItems>
+			<ViewSettingsItem id="_IDGenViewSettingsItem21" text="Customer Name" key="CustomerName"/>
+			<ViewSettingsItem id="_IDGenViewSettingsItem22" text="Delivery Status" key="DeliveryStatus"/>
+		</groupItems>
+	</ViewSettingsDialog>
+</core:FragmentDefinition>

@@ -1,0 +1,13 @@
+<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:html="http://www.w3.org/1999/xhtml" controllerName="demoapp.controller.Login">
+	<Page id="_IDGenPage1" title="{i18n>loginPage}">
+		<content>
+		    <sap.ui.layout:Grid xmlns:sap.ui.layout="sap.ui.layout" id="grid0" defaultIndent="XL3 L3 M3 S3" defaultSpan="XL6 L6 M6 S12">
+		    <sap.ui.layout:content>
+		        <Input xmlns="sap.m" id="input0" placeholder="{i18n>userId}"/>
+		        <Input xmlns="sap.m" id="input1" placeholder="{i18n>pass}" type="Password"/>
+		        <Button xmlns="sap.m" id="button0" text="{i18n>loginButton}" width="40%" press="onLogon"/>
+		    </sap.ui.layout:content>
+		    </sap.ui.layout:Grid>
+		</content>
+	</Page>
+</mvc:View>

@@ -1,0 +1,49 @@
+<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m"
+	controllerName="demoapp.controller.LocalProduct" xmlns:html="http://www.w3.org/1999/xhtml">
+	<Page id="_IDGenPage31" title="Local Products" showNavButton="true" navButtonPress=".onNavBack">
+		<content>
+			<Table id="table1" headerText="List of Local Products" items="{ path:'productModel>/Products',sorter:{ path:'Discontinued', group:true }}">
+				<columns>
+					<Column id="_IDGenColumn1">
+						<header>
+							<Text id="col1" text="Product Name"></Text>
+						</header>
+					</Column>
+					<Column id="_IDGenColumn2">
+						<header>
+							<Text id="col2" text="Quantity"></Text>
+						</header>
+					</Column>
+					<Column id="_IDGenColumn3">
+						<header>
+							<Text id="col3" text="Price"></Text>
+						</header>
+					</Column>
+					<Column id="_IDGenColumn4">
+						<header>
+							<Text id="col4" text="Discontinued"></Text>
+						</header>
+					</Column>
+				</columns>
+				<items>
+					<ColumnListItem id="_IDGenColumnListItem1">
+						<cells>
+							<Text id="_IDGenText1" text="{productModel>ProductName}"></Text>
+							<Text id="_IDGenText2" text="{productModel>QuantityPerUnit}"></Text>
+							<Text id="_IDGenText3" text="{productModel>UnitPrice}"></Text>
+							<CheckBox id="_IDGenCheckBox1" selected="{productModel>Discontinued}"></CheckBox>
+						</cells>
+					</ColumnListItem>
+				</items>
+			</Table>
+			<Panel id="idPanel1" headerText="Aggregation Binding utilizing Factory Functions and Fragments">
+				<List id="ProductList" items="{path: 'productModel>/Products', factory: '.productListFactory' }">
+					<dependents>
+						<core:Fragment fragmentName="demoapp.view.ProductSimple" type="XML"/>
+						<core:Fragment fragmentName="demoapp.view.ProductExtended" type="XML"/>
+					</dependents>
+				</List>
+			</Panel>
+		</content>
+	</Page>
+</mvc:View>

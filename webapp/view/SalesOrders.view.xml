@@ -1,0 +1,17 @@
+<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:html="http://www.w3.org/1999/xhtml" controllerName="demoapp.controller.SalesOrders">
+	<Page id="_IDGenPage111" title="{i18n>salesOrderPage}" showNavButton="true" navButtonPress=".onNavBack">
+		<content>
+		    <SearchField xmlns="sap.m" placeholder="Enter Sales Order ID you wish to search for..." id="field0" liveChange="onSearch" search="onSearchClick"/>
+		    <SearchField xmlns="sap.m" placeholder="Enter Gross Amount that you wish to filter..." id="field1" search="filterGrossAmount"/>
+		    <!--<List noDataText="Drop list items here" id="list0" items="{path:'rootModel>/SalesOrderSet',sorter:{path:'CustomerName',group:true}}" growing="true" growingThreshold="30" growingTriggerText="Click to see more items">-->
+		    <List noDataText="Drop list items here" id="list0" items="{rootModel>/SalesOrderSet}" growing="true" growingThreshold="30" growingTriggerText="Click to see more items">
+		    <items>
+		        <ObjectListItem type="Active" title="{rootModel>SalesOrderID}" number="{rootModel>GrossAmount}" numberUnit="{rootModel>CurrencyCode}" intro="{rootModel>CustomerName}" id="item1" press="onListItemPress">
+		            <attributes>
+		                <ObjectAttribute text="{rootModel>ChangedAt}" id="attribute0" title="Changed At"/>
+		            </attributes></ObjectListItem>
+		    </items>
+		    </List>
+		</content>
+	</Page>
+</mvc:View>

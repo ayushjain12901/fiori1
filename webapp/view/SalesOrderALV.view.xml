@@ -1,0 +1,63 @@
+<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m"
+	controllerName="demoapp.controller.SalesOrderALV" xmlns:html="http://www.w3.org/1999/xhtml">
+	<Page id="_IDGenPage91" title="Sales Order in a report format" showNavButton="true" navButtonPress=".onNavBack">
+		<content>
+			<Table id="idTable" items="{ path:'rootModel>/SalesOrderSet', sorter:{ path:'CustomerName', group:true } }" growing="true"
+				growingThreshold="30">
+				<headerToolbar>
+					<OverflowToolbar id="_IDGenOverflowToolbar91">
+						<Title id="_IDGenTitle91" text="Sales Orders" level="H2"/>
+						<ToolbarSpacer id="_IDGenToolbarSpacer91"/>
+						<Button id="_IDGenButton91" tooltip="Sort" icon="sap-icon://sort" press="handleSortButtonPressed"/>
+						<Button id="_IDGenButton92" tooltip="Filter" icon="sap-icon://filter" press="handleFilterButtonPressed"/>
+						<Button id="_IDGenButton93" tooltip="Group" icon="sap-icon://group-2" press="handleGroupButtonPressed"/>
+					</OverflowToolbar>
+				</headerToolbar>
+				<infoToolbar>
+					<OverflowToolbar id="vsdFilterBar" visible="false">
+						<Text id="vsdFilterLabel"/>
+					</OverflowToolbar>
+				</infoToolbar>
+				<columns>
+					<Column id="_IDGenColumn91" mergeDuplicates="true">
+						<header>
+							<Text id="_IDGenText91" text="Customer Name"></Text>
+						</header>
+					</Column>
+					<Column id="_IDGenColumn92" mergeDuplicates="true">
+						<header>
+							<Text id="_IDGenText92" text="Sales Order ID"></Text>
+						</header>
+					</Column>
+					<Column id="_IDGenColumn93" mergeDuplicates="true">
+						<header>
+							<Text id="_IDGenText93" text="Note"></Text>
+						</header>
+					</Column>
+					<Column id="_IDGenColumn94" mergeDuplicates="true">
+						<header>
+							<Text id="_IDGenText94" text="Status"></Text>
+						</header>
+					</Column>
+					<Column id="_IDGenColumn95" mergeDuplicates="true" hAlign="End">
+						<header>
+							<Text id="_IDGenText95" text="Gross Amount"></Text>
+						</header>
+					</Column>
+				</columns>
+				<items>
+					<ColumnListItem id="_IDGenColumnListItem91">
+						<cells>
+							<Text id="_IDGenText96" text="{rootModel>CustomerName}"></Text>
+							<Text id="_IDGenText97" text="{rootModel>SalesOrderID}"></Text>
+							<Text id="_IDGenText98" text="{rootModel>Note}"></Text>
+							<Text id="_IDGenText99"
+								text="Billing Status: {rootModel>BillingStatusDescription} > Delivery Status: {rootModel>DeliveryStatusDescription} > Lifecycle Status: {rootModel>LiecycleStatusDescription}"></Text>
+							<ObjectNumber id="_IDGenObjectNumber91" number="{rootModel>GrossAmount}" unit="{rootModel>CurrencyCode}"></ObjectNumber>
+						</cells>
+					</ColumnListItem>
+				</items>
+			</Table>
+		</content>
+	</Page>
+</mvc:View>
